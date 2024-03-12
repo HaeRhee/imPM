@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import QueryProvider from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <QueryProvider>
+          <h1>imPM 나는 PM이다 </h1>
+          <nav className="flex justify-center">
+            <div className="flex">
+              <Link href="/" className="p-4">
+                HOME
+              </Link>
+              <Link href="/about" className="p-4">
+                ABOUT
+              </Link>
+              <Link href="/report" className="p-4">
+                REPORT
+              </Link>
+              <Link href="/todosCsr" className="p-4">
+                todos-csr
+              </Link>
+              <Link href="/todosSsr" className="p-4">
+                todos-ssr
+              </Link>
+            </div>
+          </nav>
+          {children}
+        </QueryProvider>
+      </body>
     </html>
   );
 }
