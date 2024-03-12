@@ -1,6 +1,12 @@
 import React from "react";
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const url = "http://localhost:4000/companyInfo";
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   const companyInfo = data;
+  //   console.log(companyInfo);
+
   return (
     <div>
       <p>

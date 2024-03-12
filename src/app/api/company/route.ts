@@ -1,5 +1,5 @@
 export async function GET(request: Request) {
-  const response = await fetch("http://localhost:4000/companyInfo");
+  const response = await fetch("http://localhost:3000/companyInfo");
   const companyInfo = await response.json();
 
   if (!companyInfo) {
@@ -20,15 +20,15 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   // body에서 값을 뽑아오기
-  const { title, contents } = await request.json();
+  const { name, desctiption, image } = await request.json();
 
-  const response = await fetch("http://localhost:4000/companyInfo", {
+  const response = await fetch("http://localhost:3000/companyInfo", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
 
-    body: JSON.stringify({ title, contents, isDone: false }),
+    body: JSON.stringify({ name, desctiption, image }),
   });
 
   const companyInfo = await response.json();
