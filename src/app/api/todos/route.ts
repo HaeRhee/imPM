@@ -4,18 +4,13 @@ export async function GET(request: Request) {
   const todos = await response.json();
 
   if (!todos) {
-    return new Response("Todo is not found", {
+    return new Response("todo를 찾을 수 없습니다.", {
       status: 404,
     });
   }
 
   return Response.json({
-    todos: [
-      ...todos,
-      {
-        test: "test",
-      },
-    ],
+    todos: [...todos],
   });
 }
 
