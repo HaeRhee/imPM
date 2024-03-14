@@ -20,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <QueryProvider>
-          <h1>imPM 나는 PM이다 </h1>
-          <h2>imPM</h2>
+          <div className="flex flex-row items-center justify-around p-[1.2rem] gap-[2rem]">
+            <h2>imPM</h2>
+            <h1>imPM 나는 PM이다 </h1>
+          </div>
           <nav className="flex justify-center">
             <div className="flex">
               <Link href="/" className="p-4">

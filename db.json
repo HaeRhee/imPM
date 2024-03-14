@@ -1,21 +1,39 @@
 {
   "companyInfo": {
     "name": "주식회사 팀스파르타",
-    "desctiption": "우리회사에 대한 설명입니다. blablabla~~~~~~",
-    "image": "http://~~~~"
+    "description": "우리회사에 대한 설명입니다. blablabla~~~~~~",
+    "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   "todos": [
     {
-      "id": "1",
-      "title": "커피 마시기",
-      "contents": "아메리카노 마시기",
+      "id": "42319f65-2a67-441c-a199-300ad8f35e3b",
+      "title": "ㅇㄹ",
+      "contents": "ㅇㄹ",
       "isDone": false
     },
     {
-      "id": "42319f65-2a67-441c-a199-300ad8f35e3b",
-      "title": "ㅇㄹ",
-      "comment": "ㅇㄹ",
+      "id": "e1812293-666a-4586-ac43-5481b637ce44",
+      "title": "ㅎㅎ",
+      "contents": "ㅎㅎㅎ",
       "isDone": false
+    },
+    {
+      "id": "55376a70-c953-4f55-b733-ec1b02f71911",
+      "title": "갱신",
+      "contents": "하는 걸 보자",
+      "isDone": true
+    },
+    {
+      "id": "d01e3ab4-095e-4d7d-97ac-331f45ec03c4",
+      "title": "추가",
+      "contents": "추가하는 내용",
+      "isDone": true
+    },
+    {
+      "id": "e6ed19f3-bc66-479c-8d18-98d946378a58",
+      "title": "제목입니다",
+      "contents": "내용입니다",
+      "isDone": true
     }
   ]
 }

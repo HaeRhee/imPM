@@ -1,5 +1,7 @@
+import { serverUrl } from "@/mutation/mutationFn";
+
 export async function GET(request: Request) {
-  const response = await fetch("http://localhost:4000/companyInfo");
+  const response = await fetch(`${serverUrl}/companyInfo`);
   const companyInfo = await response.json();
   console.log(companyInfo);
   if (!companyInfo) {
@@ -7,26 +9,6 @@ export async function GET(request: Request) {
       status: 404,
     });
   }
-
-  return Response.json({
-    companyInfo: [...companyInfo],
-  });
-}
-
-export async function POST(request: Request) {
-  // body에서 값을 뽑아오기
-  const { name, desctiption, image } = await request.json();
-
-  const response = await fetch("http://localhost:4000/companyInfo", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-
-    body: JSON.stringify({ name, desctiption, image }),
-  });
-
-  const companyInfo = await response.json();
 
   return Response.json({
     companyInfo,

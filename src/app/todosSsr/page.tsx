@@ -1,7 +1,31 @@
-import React from "react";
+import TodoList from "@/components/TodoList";
+import FormTodo from "@/components/FormTodo";
+import Link from "next/link";
 
-const TodoPageSsr = () => {
-  return <div>TodoPageSsr</div>;
+const TodoPageSsr = async () => {
+  const url = "http://localhost:3000";
+
+  const response = await fetch(`${url}/api/todos`, {
+    method: "GET",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const { todos } = await response.json();
+
+  return (
+    <div className="flex flex-col items-center mt-[1.2rem] gap-[2rem]">
+      <Link href="/report">할 일 통계 보러가기</Link>
+      <article className="flex flex-col gap-[2rem]">
+        <FormTodo />
+        <section>
+          <TodoList isActive={false} formTodoData={todos} />
+          <TodoList isActive={true} formTodoData={todos} />
+        </section>
+      </article>
+    </div>
+  );
 };
 
 export default TodoPageSsr;
