@@ -1,5 +1,4 @@
 import TodoList from "@/components/TodoList";
-import FormTodo from "@/components/FormTodo";
 import Link from "next/link";
 
 const TodoPageSsr = async () => {
@@ -8,9 +7,6 @@ const TodoPageSsr = async () => {
   const response = await fetch(`${url}/todos`, {
     method: "GET",
     cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-    },
   });
   const todos = await response.json();
   console.log(todos);
