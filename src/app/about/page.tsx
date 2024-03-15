@@ -5,17 +5,18 @@ import React from "react";
 const AboutPage = async () => {
   const defaultImg = "./defaultImage-normal.png";
 
-  const url = "http://localhost:3000";
-  const data = await fetch(`${url}/api/company`, {
+  const url = "http://localhost:4000";
+  const data = await fetch(`${url}/companyInfo`, {
     method: "GET",
     cache: "force-cache",
-    headers: {
-      "Content-Type": "application/json",
-    },
   });
-  const { companyInfo }: { companyInfo: companyValues } = await data.json();
+
+  const companyInfo = await data.json();
   const { name, description, image } = companyInfo;
 
+  if (!companyInfo) {
+    return <div>정보를 가져오지 못 하고 있습니다..</div>;
+  }
   return (
     <div className="flex flex-col items-center justify-center mt-[1.2rem] gap-[2rem]">
       <h3 className="text-xl font-bold">{name}</h3>
