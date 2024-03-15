@@ -6,16 +6,10 @@
   },
   "todos": [
     {
-      "id": "42319f65-2a67-441c-a199-300ad8f35e3b",
-      "title": "ㅇㄹ",
-      "contents": "ㅇㄹ",
-      "isDone": false
-    },
-    {
       "id": "e1812293-666a-4586-ac43-5481b637ce44",
       "title": "ㅎㅎ",
       "contents": "ㅎㅎㅎ",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "55376a70-c953-4f55-b733-ec1b02f71911",

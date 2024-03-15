@@ -2,16 +2,13 @@ import { TTodo } from "@/types/type";
 import React from "react";
 
 const ReportPage = async () => {
-  const url = "http://localhost:3000";
-  const response = await fetch(`${url}/api/todos`, {
+  const url = "http://localhost:4000";
+  const response = await fetch(`${url}/todos`, {
     method: "GET",
     next: { revalidate: 10 },
-    headers: {
-      "Content-Type": "application/json",
-    },
   });
 
-  const { todos } = await response.json();
+  const todos = await response.json();
 
   const filterDoneLength = todos.filter(
     (todoItem: TTodo) => todoItem.isDone === true
@@ -20,6 +17,10 @@ const ReportPage = async () => {
   const filterWorkingLength = todos.filter(
     (todoItem: TTodo) => todoItem.isDone === false
   ).length;
+
+  if (!todos) {
+    <div>정보를 가져오지 못하고 있습니다..</div>;
+  }
 
   return (
     <div className="flex flex-col items-center justify-center mt-[1.2rem] gap-[2rem]">
