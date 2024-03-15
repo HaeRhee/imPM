@@ -19,7 +19,6 @@ const TodoPageSsr = async () => {
     <div className="flex flex-col items-center mt-[1.2rem] gap-[2rem]">
       <Link href="/report">할 일 통계 보러가기</Link>
       <article className="flex flex-col gap-[2rem]">
-        <FormTodo />
         <section>
           <TodoList isActive={false} formTodoData={todos} />
           <TodoList isActive={true} formTodoData={todos} />
