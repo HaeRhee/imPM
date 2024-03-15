@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { postJson } from "@/mutation/mutationFn";
+import { queryKey } from "@/mutation/queryKey";
 import { TTodo } from "@/types/type";
 import useSetMutation from "@/hook/useSetMutation";
 import useInput from "@/hook/useInput";
@@ -13,7 +14,7 @@ const FormTodo = () => {
     isDone: false,
   };
 
-  const { mutation } = useSetMutation(postJson, "todos");
+  const { mutation } = useSetMutation(postJson, queryKey.todos);
   const {
     form: todoInput,
     setForm: setTodoInput,

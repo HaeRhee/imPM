@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { getJson } from "@/mutation/mutationFn";
 import { useQuery } from "@tanstack/react-query";
+import { queryKey } from "@/mutation/queryKey";
 import TodoList from "@/components/TodoList";
 import FormTodo from "@/components/FormTodo";
 
@@ -12,7 +13,7 @@ const TodoPageCsr = () => {
     isLoading: formTodoLoading,
     data: formTodoData,
     isError: formTodoError,
-  } = useQuery({ queryKey: ["todos"], queryFn: getJson });
+  } = useQuery({ queryKey: [queryKey.todos], queryFn: getJson });
 
   const onMoveReport = () => {
     router.push("/report");

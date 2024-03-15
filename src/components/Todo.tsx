@@ -1,10 +1,14 @@
 import { changeJson, deleteJson } from "@/mutation/mutationFn";
 import { TTodo } from "@/types/type";
 import useSetMutation from "@/hook/useSetMutation";
+import { queryKey } from "@/mutation/queryKey";
 
 const Todo = ({ todoItem }: { todoItem: TTodo }) => {
-  const { mutation: deleteMutation } = useSetMutation(deleteJson, "todos");
-  const { mutation: changeMutation } = useSetMutation(changeJson, "todos");
+  const { mutation: deleteMutation } = useSetMutation(deleteJson, queryKey.todos);
+  const { mutation: changeMutation } = useSetMutation(
+    changeJson,
+    queryKey.todos
+  );
   const { id, title, contents, isDone } = todoItem;
 
   //삭제 버튼
