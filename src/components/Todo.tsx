@@ -4,7 +4,10 @@ import useSetMutation from "@/hook/useSetMutation";
 import { queryKey } from "@/mutation/queryKey";
 
 const Todo = ({ todoItem }: { todoItem: TTodo }) => {
-  const { mutation: deleteMutation } = useSetMutation(deleteJson, queryKey.todos);
+  const { mutation: deleteMutation } = useSetMutation(
+    deleteJson,
+    queryKey.todos
+  );
   const { mutation: changeMutation } = useSetMutation(
     changeJson,
     queryKey.todos
@@ -55,8 +58,18 @@ const Todo = ({ todoItem }: { todoItem: TTodo }) => {
         </div>
 
         <div className="flex justify-between">
-          <button onClick={onComplete}>{isDone ? "취소" : "완료"}</button>
-          <button onClick={onDelete}>삭제하기</button>
+          <button
+            onClick={onComplete}
+            className="btn btn-outline {isDone ? btn-success : btn-error}"
+          >
+            {isDone ? "취소" : "완료"}{" "}
+          </button>
+          <button
+            onClick={onDelete}
+            className="btn btn-outline btn-error p-[1rem]"
+          >
+            삭제하기
+          </button>
         </div>
       </div>
     </article>

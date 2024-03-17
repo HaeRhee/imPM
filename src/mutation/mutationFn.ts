@@ -16,9 +16,6 @@ export const postJson = async (newTodo: TTodo) => {
     },
     body: JSON.stringify(newTodo),
   });
-  // const todo = await response.json();
-
-  // return todo;
 };
 
 export const deleteJson = async (deleteTodo: Pick<TTodo, "id">) => {
