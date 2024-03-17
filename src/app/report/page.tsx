@@ -2,14 +2,14 @@ import { TTodo } from "@/types/type";
 import React from "react";
 
 const ReportPage = async () => {
-  const url = "http://localhost:4000";
-  const response = await fetch(`${url}/todos`, {
+  const url = "http://localhost:3000";
+  const response = await fetch(`${url}/api/todos`, {
     method: "GET",
     next: { revalidate: 10 },
   });
 
-  const todos = await response.json();
-
+  const { todos } = await response.json();
+  console.log("todos CSR=>", todos);
   const filterDoneLength = todos.filter(
     (todoItem: TTodo) => todoItem.isDone === true
   ).length;
