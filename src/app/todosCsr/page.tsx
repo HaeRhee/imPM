@@ -14,6 +14,7 @@ const TodoPageCsr = () => {
     data: formTodoData,
     isError: formTodoError,
   } = useQuery({ queryKey: [queryKey.todos], queryFn: getJson });
+  console.log(formTodoData);
 
   const onMoveReport = () => {
     router.push("/report");

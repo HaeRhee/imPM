@@ -14,6 +14,10 @@ const TodoList = ({ isActive, formTodoData }: TodosProps) => {
 
   const title = isActive ? "✅Done" : "🔥Working";
 
+  if (!formTodoData) {
+    return <div>정보를 가져오지 못하고 있습니다...</div>;
+  }
+
   return (
     <section>
       <div>{title}</div>
