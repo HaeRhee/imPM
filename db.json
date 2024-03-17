@@ -9,13 +9,13 @@
       "id": "83a7",
       "title": "ㅇ",
       "contents": "ㅎㅎㅎㅎㅎ",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "84dc",
       "title": "제목입니다",
       "contents": "내용입니다다다다",
-      "isDone": false
+      "isDone": true
     }
   ]
 }
