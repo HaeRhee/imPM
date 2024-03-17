@@ -60,9 +60,13 @@ const Todo = ({ todoItem }: { todoItem: TTodo }) => {
         <div className="flex justify-between">
           <button
             onClick={onComplete}
-            className="btn btn-outline {isDone ? btn-success : btn-error}"
+            className={`btn btn-outline ${
+              isDone
+                ? "text-neutral"
+                : "text-success hover:border-success hover:bg-success hover:text-white"
+            }`}
           >
-            {isDone ? "취소" : "완료"}{" "}
+            {isDone ? "취소" : "완료"}
           </button>
           <button
             onClick={onDelete}
