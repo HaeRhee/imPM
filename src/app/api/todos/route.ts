@@ -56,9 +56,12 @@ export async function PATCH(request: Request) {
         body: JSON.stringify({ isDone }),
       },
     });
-    const updateTodo = await response.json();
+    const updatedTodo = await response.json();
 
-    return new Response(null, { status: 204 });
+    return new Response(JSON.stringify(updatedTodo), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
     throw new Error("수정이 안 되었습니다.");
   }

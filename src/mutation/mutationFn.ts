@@ -4,7 +4,7 @@ export const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 export const getJson = async () => {
   const response = await fetch(`http://localhost:3000/api/todos`);
   const { todos } = await response.json();
-  console.log(todos);
+
   return todos;
 };
 
