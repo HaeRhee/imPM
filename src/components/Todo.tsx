@@ -4,7 +4,10 @@ import useSetMutation from "@/hook/useSetMutation";
 import { queryKey } from "@/mutation/queryKey";
 
 const Todo = ({ todoItem }: { todoItem: TTodo }) => {
-  const { mutation: deleteMutation } = useSetMutation(deleteJson, queryKey.todos);
+  const { mutation: deleteMutation } = useSetMutation(
+    deleteJson,
+    queryKey.todos
+  );
   const { mutation: changeMutation } = useSetMutation(
     changeJson,
     queryKey.todos
@@ -47,19 +50,33 @@ const Todo = ({ todoItem }: { todoItem: TTodo }) => {
   };
 
   return (
-    <article className="m-[2rem] p-[2rem] py-2 rounded-lg shadow-md text-center text-lg hover:transform hover:transition-[all] hover:duration-500 hover:scale-[1.06]">
+    <section className="m-[2rem] p-[2rem] py-2 rounded-lg shadow-md text-center text-lg hover:transform hover:transition-[all] hover:duration-500 hover:scale-[1.06]">
       <div>
         <div className="flex flex-col justify-left gap-[0.4rem]">
           <h4>{title}</h4>
           <p>{contents}</p>
         </div>
 
-        <div className="flex justify-between">
-          <button onClick={onComplete}>{isDone ? "취소" : "완료"}</button>
-          <button onClick={onDelete}>삭제하기</button>
+        <div className="flex justify-between p-[1rem]">
+          <button
+            onClick={onComplete}
+            className={`btn btn-outline pl-[1.8rem] pr-[1.8rem] text-[16px] ${
+              isDone
+                ? "text-neutral"
+                : "text-success hover:border-success hover:bg-success hover:text-white"
+            }`}
+          >
+            {isDone ? "취소" : "완료"}
+          </button>
+          <button
+            onClick={onDelete}
+            className="btn btn-outline btn-error p-[1rem] text-[16px] "
+          >
+            삭제하기
+          </button>
         </div>
       </div>
-    </article>
+    </section>
   );
 };
 

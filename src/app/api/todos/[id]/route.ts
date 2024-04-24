@@ -8,7 +8,7 @@ export async function PATCH(
   try {
     const id = params.id;
     const { isDone } = await request.json();
-    console.log(id, isDone);
+
     const response = await fetch(`${serverUrl}/todos/${id}`, {
       method: "PATCH",
       body: JSON.stringify({ isDone }),
@@ -17,7 +17,6 @@ export async function PATCH(
         body: JSON.stringify({ isDone }),
       },
     });
-    const updateTodo = await response.json();
 
     return new Response(null, { status: 204 });
   } catch (error) {

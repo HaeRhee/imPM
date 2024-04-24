@@ -13,8 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      extend: {
+        hover: {
+          // 성공 색상을 사용
+          success: "hover:border-success hover:bg-success hover:text-white",
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
 export default config;
